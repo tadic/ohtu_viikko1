@@ -7,3 +7,4 @@ terget
 target
 *.xxx
 .DS_STORE
+.DC_Store
