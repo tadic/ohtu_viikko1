@@ -6,3 +6,4 @@ clear
 terget
 target
 *.xxx
+.DS_STORE
