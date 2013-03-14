@@ -45,6 +45,29 @@ public class VarastoTest {
         // vapaata tilaa pitäisi vielä olla tilavuus-lisättävä määrä eli 2
         assertEquals(2, varasto.paljonkoMahtuu(), vertailuTarkkuus);
     }
+    @Test
+    public void lisaysLisaaLiikka() { //lisäys
+        varasto.lisaaVarastoon(12);
+        // varasto on täynä
+        assertEquals(0, varasto.paljonkoMahtuu(), vertailuTarkkuus);
+    }
+    @Test
+    public void lisäänegatiivisen() { //lisäys
+        varasto.lisaaVarastoon(-2);
+        assertEquals(10, varasto.paljonkoMahtuu(), vertailuTarkkuus);
+    }
+    @Test
+    public void ottaminenliikkaa() { // lisäys
+        double saatuMaara = varasto.otaVarastosta(2);
+        assertEquals(0, saatuMaara, vertailuTarkkuus);
+    }
+    
+        
+    @Test
+    public void ottaaNegatiivisen() { // lisäys
+        double saatuMaara = varasto.otaVarastosta(-3);
+        assertEquals(0, saatuMaara, vertailuTarkkuus);
+    }
 
     @Test
     public void ottaminenPalauttaaOikeanMaaran() {
